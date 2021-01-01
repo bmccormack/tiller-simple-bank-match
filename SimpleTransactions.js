@@ -2,6 +2,9 @@
 
 class Transactions {
   constructor(){
+    if (!("transactions" in TRANSACTIONS)){
+      throw "Missing transaction data. Copy JSON transactions from Simple to JSON_simple.gs. See https://github.com/bmccormack/tiller-simple-bank-match#simple-downloading-transactions for more information."
+    }
     this.data = TRANSACTIONS["transactions"];
   }
 
